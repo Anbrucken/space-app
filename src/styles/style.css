@@ -1,0 +1,53 @@
+:root {
+    --primary-bg-color:#e1e8f0;
+    --accent-1: #9068be;
+    --accent-2:  #e62739;
+    --accent-3: #6ed3cf;
+    --font-color: rgb(89,87,88);
+    font-family: Rubik;
+    color: var(--font-color);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg-color: #333333;
+        --bg-color-shade: #000d09;
+        --font-color: #f3f2f4;
+        color: var(--font-color);
+        background: linear-gradient(180deg, var(--primary-bg-color), rgb( from var(--primary-bg-color) calc(r*0.5) calc(g*0.5) calc(b*0.5) ));
+        background-attachment: fixed; 
+        min-height: 100vh;
+        text-shadow: 2px 2px 2px var(--bg-color-shade);
+    }
+  
+    a:hover {
+      color: #24c8db;
+    }
+  
+    input,
+    button {
+      color: #ffffff;
+      background-color: #0f0f0f98;
+    }
+    button:active {
+      background-color: #0f0f0f69;
+    }
+  }
+
+@font-face {
+  font-family: "Rubik";
+  font-display: "block";
+  src: url("../assets/fonts/Rubik/Rubik-Medium.ttf");
+}
