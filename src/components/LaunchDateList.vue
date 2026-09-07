@@ -5,8 +5,8 @@
         <h1>Pending Launches: {{ pendingLaunches }}</h1>
         <LaunchDate v-for="launch in launches" :key="launch.id" :launch="launch"></LaunchDate>
         <div ref="sentinel" class="sentinel"></div>
-        <div v-if="isLoadingMore">Loading...</div>
-        <div v-if="loadingMoreError">{{loadingMoreError}}</div>
+        <LoadingElement v-if="isLoadingMore"></LoadingElement>
+        <div v-else>{{loadingMoreError}}test</div>
         
     </section>
     
@@ -14,6 +14,7 @@
 <script setup>
 import {ref, onMounted, onUnmounted, nextTick} from 'vue';
 import LaunchDate from "./LaunchDate.vue";
+import LoadingElement from './LoadingElement.vue';
 const launches = ref([]);
 const pendingLaunches = ref(0);
 const isLoading = ref(true);
