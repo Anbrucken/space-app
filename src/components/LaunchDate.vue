@@ -14,7 +14,7 @@
                 <span class="launch-time">Date: {{ formatDate(launch.net) }}</span> 
                 <span class="launch-location">Location: {{ launch.pad.name}}</span>
                 <h2> T-{{ countdown.days }}d:{{ countdown.hours }}h:{{ countdown.minutes }}m:{{ countdown.seconds }}s</h2>
-                <div class="stream-container">    
+                <div v-if="launch.webcast_live" class="stream-container">    
                     <a class="stream" v-for="url in launch.vid_urls" :href="url.url">
                         <component :is="getIcon(url.source)" />
                     </a>
@@ -91,16 +91,18 @@
     min-height: 250px;
     min-width: 450px;
     max-width: 70vw;
-    border-color:var(--accent-1);
+    
     
     display: flex;
     justify-content: space-between;
     align-items: center;
     justify-self: center;
    
-    border-radius: 5px;
+   
     flex-direction: column;
     box-shadow: 0px 0px 50px -5px var(--bg-color-shade);
+    border-radius: 0px 0px 15px 15px;
+
     
 }
 .logo-parent{
@@ -120,6 +122,7 @@
     width: 50%;
     background-size: cover;
     background-position: center;
+    border-radius: 0px 0px 0px 15px;
     
 }
 .agency-logo {
@@ -138,7 +141,7 @@
     gap: 0.25rem; 
     align-items: center;
     box-shadow: 2px 2px 10px 2px var(--bg-color-shade)inset;
-   
+    border-radius: 0px 0px 15px 0px;
     
    
     
@@ -154,6 +157,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--primary-bg-color);
+    border-radius: inherit;
 }
 
 .stream{
