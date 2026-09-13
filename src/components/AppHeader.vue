@@ -1,7 +1,7 @@
 <template>
 <div class="nav-container">
     <router-link to="/" class="nav-link">Calendar</router-link>
-    <router-link to="/game" class="nav-link">Game</router-link>
+   
 </div>
 
 </template>
